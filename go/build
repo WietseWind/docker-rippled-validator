@@ -1,0 +1,19 @@
+#!/bin/bash
+
+self(){
+  DIR=$( cd "$( dirname "$0" )/" && pwd)
+  echo $DIR
+}
+
+echo "Stopping containers"
+docker ps -a|grep rippledvalidator:latest|cut -d " " -f 1 |xargs -I___ docker stop ___
+
+if [[ $(docker images -a|grep rippledvalidator:latest|wc -l) -gt "0" ]]; then
+    echo "Removing image"
+    docker rmi -f rippledvalidator:latest
+fi
+
+echo "Building image"
+docker build --tag rippledvalidator:latest $(self)/../.
+
+echo "Done, you can now run $(self)/up"

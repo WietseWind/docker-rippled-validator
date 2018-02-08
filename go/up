@@ -1,0 +1,16 @@
+#!/bin/bash
+
+self(){
+  DIR=$( cd "$( dirname "$0" )/" && pwd)
+  echo $DIR
+}
+
+$(self)/down
+
+docker run \
+    -dit \
+    --name rippledvalidator \
+    -p 51235:51235 \
+    -v $(self)/../keystore:/keystore/ \
+    rippledvalidator:latest
+
