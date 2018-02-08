@@ -41,7 +41,7 @@ docker run -dit \
     --name rippledvalidator \
     -p 51235:51235 \
     -v /My/Local/Disk/RippledKeystore/:/keystore/ \
-    rippledvalidator:latest
+    xrptipbot/rippledvalidator:latest
 ```
 
 You can change the `--name` and **make sure you specify a valid local full path for your volume source, instead of `/My/Local/Disk/RippledKeystore/`**.
