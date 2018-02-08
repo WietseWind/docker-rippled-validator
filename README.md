@@ -72,3 +72,22 @@ docker exec rippledvalidator /opt/ripple/bin/rippled server_info
 
 If you started the container manually, you may have to change the name of the container (`rippledvalidator`) to the name you entered in your `docker run` command.
 
+## If you want to keep your validator running
+
+... You probably want to validate your domain (Domain Verification: [https://ripple.com/build/rippled-setup/#domain-verification](https://ripple.com/build/rippled-setup/#domain-verification). Since the `rippled` and `validator-keys` binaries are not on your local computer, you'll have to run them inside the docker container. All you have to do is prepend the `docker exec` command with your container name before the commands Ripple is showing;
+
+So:
+
+```
+/opt/ripple/bin/rippled server_info -q | grep pubkey_validator
+```
+
+... becomes:
+
+```
+docker exec rippledvalidator /opt/ripple/bin/rippled server_info -q | grep pubkey_validator
+```
+
+If you started the container manually, you may have to change the name of the container (`rippledvalidator`) to the name you entered in your `docker run` command.
+
+When you need to provide the contents of your domain private key, you can add your domain private key to the `keystore` folder (or volume mount you made), the contents are mapped to `/keystore/` in the container. 
