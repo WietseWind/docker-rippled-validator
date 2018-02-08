@@ -28,7 +28,7 @@ docker build --tag ripplevalidator:latest .
 
 ### From the Docker Hub
 
-Use the image `xxxxx/yyyyyy:latest`.
+Use the image `xrptipbot/rippledvalidator`.
 
 **Because you only retrieved the container image from the Docker Hub, you have to manually create a container based on the image.** When creating the container, please make sure you open port `51235`. 
 
