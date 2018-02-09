@@ -9,6 +9,7 @@ This container is running on `ubuntu:latest`.
 
 ## How to run
 
+If you are new to this and you want to deploy a server for $20 a month at DigitalOcean: [here's a howto](https://medium.com/@WietseWind/how-to-run-a-ripple-validator-digitalocean-7e5fca1c3d77).
 
 ### From Github
 
