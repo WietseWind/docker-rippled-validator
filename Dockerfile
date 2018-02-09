@@ -21,6 +21,8 @@ RUN apt-get update -y && \
     echo '#!/bin/bash' > /usr/bin/server_info && echo '/entrypoint.sh server_info' >> /usr/bin/server_info && \
     chmod +x /usr/bin/server_info
 
+RUN ln -s /opt/ripple/bin/rippled /usr/bin/rippled
+
 EXPOSE 51235
 
 ENTRYPOINT [ "/entrypoint.sh" ]
