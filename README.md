@@ -68,7 +68,7 @@ docker logs -f rippledvalidator
 If you want to check the rippled server status:
 
 ```
-docker exec rippledvalidator /opt/ripple/bin/rippled server_info
+docker exec rippledvalidator server_info
 ```
 
 If you started the container manually, you may have to change the name of the container (`rippledvalidator`) to the name you entered in your `docker run` command.
