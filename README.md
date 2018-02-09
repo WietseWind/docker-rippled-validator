@@ -24,7 +24,7 @@ The `go/up` command will mount the subfolder (in the cloned repo folder) `keysto
 If you want to build the image manually, use (you can change the tag):
 
 ```
-docker build --tag ripplevalidator:latest .
+docker build --tag rippledvalidator:latest .
 ```
 
 ### From the Docker Hub
