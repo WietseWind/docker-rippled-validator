@@ -4,6 +4,9 @@ rippledcnflc=`/bin/cat /keystore/rippled.cfg 2>/dev/null | wc -l`
 ripplevalidatorkslc=`/bin/cat /keystore/validator-keys.json 2>/dev/null | wc -l`
 validatorslc=`/bin/cat /keystore/validators.txt 2>/dev/null | wc -l`
 
+mkdir -p /root/.ripple
+mkdir -p /keystore
+
 if [[ "$rippledcnflc" -gt "0" && "$ripplevalidatorkslc" -gt "0" && "$validatorslc" -gt "0" ]]; then
 
     echo "Existing rippled config at host /keystore/, using them."
@@ -19,7 +22,7 @@ if [[ "$ripplevalidatorkslc" -lt "1" ]]; then
     echo "No host-validator-keys, generating validator keys"
 
     /opt/ripple/bin/validator-keys create_keys
-    /bin/cat /root/.ripple/validator-keys.json > /keystore/validator-keys.json
+    /bin/cat /root/.ripple/validator-keys.json > /keystore/validator-keys.json 2>/dev/null
 
     token=$(/opt/ripple/bin/validator-keys create_token --keyfile /root/.ripple/validator-keys.json)
     token=${token#*]}
@@ -30,8 +33,8 @@ if [[ "$ripplevalidatorkslc" -lt "1" ]]; then
     cp /rippled.cfg /etc/opt/ripple/rippled.cfg
     rm /rippled.cfg
 
-    /bin/cat /etc/opt/ripple/rippled.cfg > /keystore/rippled.cfg
-    /bin/cat /etc/opt/ripple/validators.txt > /keystore/validators.txt
+    /bin/cat /etc/opt/ripple/rippled.cfg > /keystore/rippled.cfg 2>/dev/null
+    /bin/cat /etc/opt/ripple/validators.txt > /keystore/validators.txt 2>/dev/null
 
 fi
 

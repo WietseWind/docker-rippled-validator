@@ -18,7 +18,7 @@ RUN apt-get update -y && \
     rm -rf /var/lib/apt/lists/* && \
     export PATH=$PATH:/opt/ripple/bin/ && \
     chmod +x /entrypoint.sh && \
-    echo -e '#!/bin/bash'"\n"'/entrypoint.sh server_info' > /usr/bin/server_info && \
+    echo '#!/bin/bash' > /usr/bin/server_info && echo '/entrypoint.sh server_info' >> /usr/bin/server_info && \
     chmod +x /usr/bin/server_info
 
 EXPOSE 51235
