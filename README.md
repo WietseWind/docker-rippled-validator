@@ -92,3 +92,16 @@ docker exec rippledvalidator /opt/ripple/bin/rippled server_info -q | grep pubke
 If you started the container manually, you may have to change the name of the container (`rippledvalidator`) to the name you entered in your `docker run` command.
 
 When you need to provide the contents of your domain private key, you can add your domain private key to the `keystore` folder (or volume mount you made), the contents are mapped to `/keystore/` in the container. 
+
+# Updating
+
+- **2017-02-21** rippled 0.90.0 [is released](https://ripple.com/dev-blog/rippled-version-0-90-0/)
+
+## Update process
+
+1. Stop the container: `docker stop rippledvalidator` (if you named (`--name`) the container `rippled`)
+2. Remove the container: `docker rm rippledvalidator`
+3. Remove the image: `docker rmi xrptipbot/rippledvalidator:latest` (or if you built the container image based on the [Github repo](https://github.com/WietseWind/docker-rippled-validator): use the image name you specified when building)
+4. Re-create the container; if you used Git: `git pull` and `go/build` - if you used the Docker Hub: just use the command from this Readme (_From the Docker Hub_), a new version of the image will be downloaded.
+
+**USE THE PATHS YOU SPECIFIED (`-v` argument) WHEN RECREATING THE CONTAINER IF YOU WANT TO KEEP YOUR CONFIG AND/OR DATA!**
