@@ -7,7 +7,7 @@ RUN export LANGUAGE=C.UTF-8; export LANG=C.UTF-8; export LC_ALL=C.UTF-8; export 
 COPY entrypoint /entrypoint.sh
 
 RUN apt-get update -y && \
-    apt-get install yum-utils alien ssh openssl nano -y && \
+    apt-get install yum-utils alien ssh openssl -y && \
     cd /tmp && \
     wget https://mirrors.ripple.com/ripple-repo-el7.rpm && \
     rpm -Uvh ripple-repo-el7.rpm && \
