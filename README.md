@@ -96,6 +96,7 @@ When you need to provide the contents of your domain private key, you can add yo
 # Updating
 
 - **2018-02-21** rippled 0.90.0 [is released](https://ripple.com/dev-blog/rippled-version-0-90-0/)
+- **2018-03-23** rippled 0.90.1 [is released](https://ripple.com/dev-blog/rippled-version-0-90-1/)
 
 ## Update process
 
