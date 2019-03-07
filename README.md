@@ -104,6 +104,7 @@ When you need to provide the contents of your domain private key, you can add yo
 - **2018-12-12** rippled 1.1.2 [is released](https://ripple.com/dev-blog/introducing-xrp-ledger-rippled-version-1-1-2/)
 - **2019-02-14** rippled 1.2.0 [is released](https://github.com/ripple/rippled/releases/tag/1.2.0)
 - **2019-02-27** rippled 1.2.1 [is released](https://github.com/ripple/rippled/releases/tag/1.2.1)
+- **2019-03-07** rippled 1.2.2 [is released](https://github.com/ripple/rippled/releases/tag/1.2.2)
 
 ## Update process
 
